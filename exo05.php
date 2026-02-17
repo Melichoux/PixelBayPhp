@@ -4,7 +4,7 @@ $stockCible = 100;
 $stockLivraison = 8;
 $compteur = 0;
 
-echo "--- Reapprovisionnement ---<br>";
+echo "--- Réapprovisionnement ---<br>";
 while ($stockActuel < $stockCible) {
     $stockActuel = $stockActuel + $stockLivraison;
     $compteur ++;
@@ -18,5 +18,7 @@ $jeuxPhares = ["Cyber Race", "Pixel Quest", "Block Master", "Sky Pilot",
                "Dungeon Crawl", "Mystic Lands", "Battle Arena", "Escape Room",
                "Neural Rush", "Horror House", "Festival Games", "Winter Sports"];
 
-
+for ($i=0; $i < count($mois); $i++) { 
+    echo "$mois[$i] : $jeuxPhares[$i]<br>";
+}
 ?>
