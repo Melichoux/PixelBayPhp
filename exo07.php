@@ -59,10 +59,55 @@ echo "Afficher un jeu du tableau associatif<hr>";
 
 // afficherJeu($collection, 1);
 
-echo "Calculer et retourner la moyenne des scores d'un jeu<hr>";
+echo "<br>Calculer et retourner la moyenne des scores d'un jeu<hr>";
 
 function moyenneScore ($array) {
     $moyenne = array_sum($array)/ count($array);
     return $moyenne;
 }
+echo moyenneScore($collection[0]["scores"]) . " <br>";
+echo moyenneScore($collection[1]["scores"]). " <br>";
+echo moyenneScore($collection[2]["scores"]). " <br>";
+echo moyenneScore($collection[3]["scores"]). " <br>";
+
+echo "<br>Afficher le meilleur scores entre tous les jeux<hr>";
+
+// Logique du code, calculer 
+function bestMoyenne($array){
+    $calcFor = [];
+    for($i=0; $i < count($array); $i++) { 
+    $calcFor [$i] = moyenneScore($array[$i]["scores"]);
+    }
+    $indexMax = array_search(max($calcFor), $calcFor);
+    return ["max" => max($calcFor),
+    "elements" => $array[$indexMax]];
+    };
+
+    // code alternatif: reponse de l'exo
+
+// function calculerMoyenneScores($jeu) {
+//     $somme = 0;
+//     foreach ($jeu['scores'] as $score) {
+//         $somme += $score;
+//     }
+//     return round($somme / count($jeu['scores']), 1);
+// }
+
+// function trouverMeilleurJeu($collection) {
+//     $meilleurJeu = $collection[0];
+//     $meilleureMoyenne = calculerMoyenneScores($collection[0]);
+
+//     foreach ($collection as $jeu) {
+//         $moyenne = calculerMoyenneScores($jeu);
+//         if ($moyenne > $meilleureMoyenne) {
+//             $meilleureMoyenne = $moyenne;
+//             $meilleurJeu = $jeu;
+//         }
+//     }
+//     return $meilleurJeu;
+// }
+    
+$resultBestMoyenne = bestMoyenne($collection); /* permet d'appeler les resultats de la fonction bestMoyenne a plusieurs endroits sans relancer la fonction a chaque appel*/
+//var_dump(bestMoyenne($collection));
+echo "Le jeu ayant la meilleure note est " . $resultBestMoyenne["elements"]["titre"] . " avec un score moyen de " .$resultBestMoyenne["max"];
 ?>
