@@ -32,18 +32,18 @@ $collection = [
     ];
 
 echo "Afficher un jeu du tableau associatif<hr>";
-// function afficherJeu($array, $index) {
-//     foreach ($array[$index] as $key => $value) {
-//         if ($key=="scores") {
-//             echo "$key : ";
-//             for ($i=0; $i < count($value) ; $i++) { 
-//                 echo "$value[$i], ";
-//             };
-//         } else {
-//             echo $key . ' : ' .$value.'<br>';
-//         }
-//     }
-// }
+function afficherJeu($array, $index) {
+    foreach ($array[$index] as $key => $value) {
+        if ($key=="scores") {
+            echo "$key : ";
+            for ($i=0; $i < count($value) ; $i++) { 
+                echo "$value[$i], ";
+            };
+        } else {
+            echo $key . ' : ' .$value.'<br>';
+        }
+    }
+}
 
 // Alternative avec la fonction implode (transforme toute les valeurs d'un array avec un separateur de notre choix)
 // function afficherJeu($array, $index) {
@@ -57,7 +57,7 @@ echo "Afficher un jeu du tableau associatif<hr>";
 //     }
 // }
 
-// afficherJeu($collection, 1);
+afficherJeu($collection, 1);
 
 echo "<br>Calculer et retourner la moyenne des scores d'un jeu<hr>";
 
