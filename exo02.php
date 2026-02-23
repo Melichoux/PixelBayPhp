@@ -11,4 +11,5 @@ echo '--- Jeu Star --- <br>';
 foreach ($jeuStar as $key => $value) {
     echo $key . ' : ' .$value.'<br>';
 }
-?>
+
+var_dump($jeux);
