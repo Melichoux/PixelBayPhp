@@ -10,7 +10,7 @@ $sujet = "";
 $message = "";
 
 // var_dump($sujet);
-$name_lenght = mb_strlen($name); /* On crée cette variable pour ne pas lancer la fonction deux fois à l'appel de $name. mb_strlen permet de compter le nombre exact de caractere dans la saisie (a l'inverse de strlen qui compte le poids des caracteres en octets, donc pour l'alphabet francais on priviligie la fonction mb_stlen)*/
+$name_lenght = mb_strlen($name,"UTF-8"); /* On crée cette variable pour ne pas lancer la fonction deux fois à l'appel de $name. mb_strlen permet de compter le nombre exact de caractere dans la saisie (a l'inverse de strlen qui compte le poids des caracteres en octets, donc pour l'alphabet francais on priviligie la fonction mb_stlen)*/
 
 //------------------------------------------------------------------
 //verifier que le formulaire est bien envoyé en POST
@@ -26,14 +26,14 @@ $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
 // Validation de la saisie
 
-if(empty($name)){
+if(empty($name)|| $name_lenght<2 || $name_lenght>50){ // On appliquera toutes les contraintes de saisie (= sécurité) dans le php et pas dans le html
     $erreurs[] = "le nom est obligatoire.";}
 
-if(empty($email)){
+if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
     $erreurs[] = "L'adresse email n'est pas valide.";}
 
-if(empty($message)){
-    $erreurs[] = "Vous n'avez pas saisie de message.";}
+if(empty($message) || mb_strlen($message)<10){
+    $erreurs[] = "Vous n'avez pas saisie de message ou il ne contient pas assez de caractere.";}
 
 if(empty($erreurs)){
     $succes = true;}
