@@ -1,16 +1,6 @@
-<?php
-// Initialise les variables et permettra le stockage des données du formulaires
-
+<?php 
 $errors = [];
 $success = false;
-
-// $last_name = "";
-// $first_name ="";
-// $email = "";
-// $password = "";
-// $confirm_password = "";
-// $age = "";
-// $cgu = "";
 
 //------------------------------------------------------------------
 //verifier que le formulaire est bien envoyé en POST
@@ -158,3 +148,4 @@ if(empty($errors)){
     <footer></footer>
 </body>
 </html>
+?>
