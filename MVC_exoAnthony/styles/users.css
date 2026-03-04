@@ -1,0 +1,130 @@
+body.page-users {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+}
+
+.page-users .container {
+    max-width: 1100px;
+}
+
+.users-card {
+    text-align: left;
+    padding: 32px 28px;
+}
+
+.users-back-link {
+    margin-bottom: 18px;
+}
+
+.users-title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #2d3748;
+}
+
+.users-empty {
+    font-size: 16px;
+    color: #718096;
+}
+
+.users-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.users-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+}
+
+.users-table-head {
+    background-color: #edf2f7;
+}
+
+.users-table-header {
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 14px;
+    color: #2d3748;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.users-table-cell {
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #4a5568;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.users-table-body .users-table-row:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+.users-table-body .users-table-row:hover {
+    background-color: #ebf8ff;
+}
+
+.users-table-body .users-table-row:last-child .users-table-cell {
+    border-bottom: none;
+}
+
+.users-link {
+    color: #2b6cb0;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.users-link:hover {
+    color: #2c5282;
+    text-decoration: underline;
+}
+
+.users-detail-card {
+    max-width: 720px;
+}
+
+.users-detail-list {
+    display: grid;
+}
+
+.users-detail-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.users-detail-item:last-child {
+    border-bottom: none;
+}
+
+.users-detail-label {
+    font-weight: 700;
+    color: #4a5568;
+}
+
+.users-detail-value {
+    color: #2d3748;
+}
+
+@media (max-width: 768px) {
+    .users-card {
+        padding: 24px 18px;
+    }
+
+    .users-title {
+        font-size: 26px;
+    }
+
+    .users-detail-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+}
